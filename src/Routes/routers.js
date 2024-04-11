@@ -11,11 +11,7 @@ router.post("/mentor",async(req,res)=>{
         if(Object.keys.length<=0){
             res.send(500).json({error:"Add details of the mentor to proceed"})
         }
-        //checking if there is already a mentor with the same name
-        const checkMentorName=await findMentor(req.body.mentor_name);
-        if(checkMentorName){
-           res.status(400).json({error:"Mentor Name already registered"})
-        }else{
+        else{
             const mentorData=req.body;
             //creating mentor
             const mentorCreation=await creatingMentor(mentorData);
@@ -37,11 +33,7 @@ router.post("/student",async(req,res)=>{
         if(Object.keys.length<=0){
             res.send(500).json({error:"Add details of the student to proceed"})
         }
-        //checking if there is already a student with the same name
-        const checkStudentName=await findStudent(req.body.student_name);
-        if(checkStudentName){
-            res.status(400).json({error:"Student Name already registered"})
-        }else{
+        else{
             const studentData=req.body;
             //creating student
             const studentCreation=await creatingStudent(studentData);
@@ -67,7 +59,7 @@ router.post("/assignMentor",async(req,res)=>{
 
         //finding mentor and changing mentor status to assigned
         const mentor=req.body.mentor_name;
-        const mentorStatusUpdate=await findMentorAndStatusUpdate(mentor);
+        const mentorStatusUpdate = await findMentorAndStatusUpdate(mentor);
 
         //finding student and changing student status to assigned
         const students=req.body.student_names;
