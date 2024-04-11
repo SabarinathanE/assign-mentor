@@ -75,4 +75,3 @@ export function getAllData(){
 export function getAllMentorData(name){
     return client.db("Mentor-Student").collection("history").find({"students.student_name":name}).toArray();
 }
-

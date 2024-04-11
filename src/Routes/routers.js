@@ -1,5 +1,5 @@
 import express from "express";
-import { addStudentsToMentor, checkStudentMentor, creatingMentor, creatingStudent, findMentor, findMentorAndStatusUpdate, findStudent, findStudentAndStatusUpdate, findingMentor, findingMentorStudents, findingStudent, getAllData, getAllMentorData, storingMentorDetails, unAssignedStudents, updatingMentor } from "../Controller/index.js";
+import { addStudentsToMentor, checkStudentMentor, creatingMentor, creatingStudent, findMentor, findMentorAndStatusUpdate, findStudent, findStudentAndStatusUpdate, findingMentor, findingMentorStudents, findingStudent, getAllData, getAllMentorData, storingMentorDetails, unAssignedStudents, updatingMentor } from "../../src/Controller/index.js";
 
 //using express.Router
 const router=express.Router();
